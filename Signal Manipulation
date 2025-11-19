@@ -36,13 +36,15 @@ int main(int argc, char **argv) {
     while (1) {
        
         float current_factor; // defines current amplification factor
-        printf("\nEnter modification factor (enter 0 to reset amplification:");
+        printf("\nEnter modification factor (enter 0 to reset amplification, or -1 to end program:");
         scanf("%f", &current_factor);
 
         // if statement for amplitude reset
         if (current_factor == 0) {
             cumulative_factor = 1.0;
             printf("Amplitude has been reset");
+        } else if (current_factor  == -1){ // else if program for loop break
+            break;
         } else { // else statement for modifying amplification factor
             cumulative_factor = cumulative_factor * current_factor;
             printf("Amplitude has been modified by %.4f\n", cumulative_factor);
